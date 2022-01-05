@@ -83,4 +83,9 @@ contract Invest {
             IERC20(tokens[3]).mint(_to, 1);
         }
     }
+
+    function withdrawCoin() external onlyOwner{
+        uint256 amount = IERC20(coin).balanceOf(address(this));
+        IERC20(coin).transfer(msg.sender, amount);
+    }
 }
