@@ -13,14 +13,14 @@ contract Invest {
     uint256[4] lootBox;
     address[4] tokens;
 
-    constructor(address _coin, uint256 _maxAmount, uint256 _rare, uint256 _epic, uint256 _legendary, uint256 _cosmic) {
+    constructor(address _coin, uint256 _maxAmount, uint256 _rare, uint256 _epic, uint256 _legendary) {
         owner = msg.sender;
         coin = _coin;
         MAXAMOUNT = _maxAmount;
         lootBox[0] = _rare;
         lootBox[1] = _epic;
         lootBox[2] = _legendary;
-        lootBox[3] = _cosmic;
+        // lootBox[3] = _cosmic;
     }
 
     modifier onlyOwner {
@@ -54,7 +54,7 @@ contract Invest {
         lootBox[0] = _rare;
         lootBox[1] = _epic;
         lootBox[2] = _legendary;
-        lootBox[3] = _cosmic;
+        // lootBox[3] = _cosmic;
     }
 
     function setTokens(address _rare, address _epic, address _legendary, address _cosmic) external onlyOwner{
