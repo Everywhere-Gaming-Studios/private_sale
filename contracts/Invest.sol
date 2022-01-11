@@ -42,8 +42,10 @@ contract Invest {
         coin = _coin;
     }
 
-    function setWhitelist (address _user) external onlyOwner{
-        whitelist[_user] = true;
+    function setWhitelist (address[] _users) external onlyOwner{
+        for (uint256 _user = 0; _user < _users.length; _user++) {
+            whitelist[_user] = true;            
+        }
     }
 
     function setMaxAmount (uint256 _maxAmount) external onlyOwner{
@@ -65,7 +67,7 @@ contract Invest {
         tokens[3] = _cosmic;
     }
 
-    function invest(uint256 _amount) external tokensSet{
+    function invest(uint256 _amount) external isWhitelisted tokensSet{
         require((amountPaid[msg.sender] + _amount) <= MAXAMOUNT,"MAX AMOUNT");
         IERC20(coin).transferFrom(msg.sender, address(this), _amount);
         amountPaid[msg.sender] = amountPaid[msg.sender] + _amount;
@@ -74,13 +76,13 @@ contract Invest {
 
     function _mintToken(address _to, uint256 _amount) internal tokensSet{
         if(_amount < lootBox[0]){
-            IERC20(tokens[0]).mint(_to, 1);
+            IERC20(tokens[0]).mint(_to, _amount);
         } else if(_amount < lootBox[1]){
-            IERC20(tokens[1]).mint(_to, 1);
+            IERC20(tokens[1]).mint(_to, _amount);
         } else if(_amount < lootBox[2]){
-            IERC20(tokens[2]).mint(_to, 1);
+            IERC20(tokens[2]).mint(_to, _amount);
         } else {
-            IERC20(tokens[3]).mint(_to, 1);
+            IERC20(tokens[3]).mint(_to, _amount);
         }
     }
 
