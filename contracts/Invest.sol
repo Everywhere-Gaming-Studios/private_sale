@@ -47,6 +47,12 @@ contract Invest {
             whitelist[_user] = true;            
         }
     }
+    
+    function removeWhitelist (address[] _users) external onlyOwner{
+        for (uint256 _user = 0; _user < _users.length; _user++) {
+            whitelist[_user] = false;            
+        }
+    }
 
     function setMaxAmount (uint256 _maxAmount) external onlyOwner{
         MAXAMOUNT = _maxAmount;
