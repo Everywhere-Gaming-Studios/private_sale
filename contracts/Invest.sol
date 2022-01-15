@@ -42,15 +42,15 @@ contract Invest {
         coin = _coin;
     }
 
-    function setWhitelist (address[] _users) external onlyOwner{
+    function setWhitelist (address[] memory _users) external onlyOwner{
         for (uint256 _user = 0; _user < _users.length; _user++) {
-            whitelist[_user] = true;            
+            whitelist[_users[_user]] = true;            
         }
     }
     
-    function removeWhitelist (address[] _users) external onlyOwner{
+    function removeWhitelist (address[] memory  _users) external onlyOwner{
         for (uint256 _user = 0; _user < _users.length; _user++) {
-            whitelist[_user] = false;            
+            whitelist[_users[_user]] = false;            
         }
     }
 
