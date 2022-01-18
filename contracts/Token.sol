@@ -25,8 +25,9 @@ contract Token is ERC20 {
         _;
     }
 
-    function mint(address to, uint256 amount) external investContractOnly{
+    function mint(address to, uint256 amount) external investContractOnly returns(bool){
         _mint(to, amount);
+        return true;
     }
 
 
