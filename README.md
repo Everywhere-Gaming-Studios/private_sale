@@ -1,6 +1,6 @@
 ## Cosmic Private sale
 This repository contains additional information pertaining to the Cosmic Exodus private Sale.
-The Cosmic Exodus Private Sale provides early investors with an opportunity to take part into the Cosmic Exodus ahead of the pre-sale and mainnet launch. All early investors are expected to successfully complete KYC and whitelisting to contribute to the Cosmic Exodus token sale. Any questions or additional information needed can be sought by sending an e-mail to me@mail.com
+The Cosmic Exodus Private Sale provides early investors with an opportunity to take part into the Cosmic Exodus ahead of the pre-sale and mainnet launch. All early investors are expected to successfully complete KYC and whitelisting to contribute to the Cosmic Exodus token sale. Any questions or additional information needed can be sought by sending an e-mail to contact.cosmicexodus@gmail.com
 
 ## Who are we?
 _Everywhere Team has been developing and innovating within the cryptocurrencies and blockchain world since early 2021. We are a passionate team, with highly skilled individuals that saw the potential and added value of being early birds in this massive game changer. 
