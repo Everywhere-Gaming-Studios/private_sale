@@ -15,7 +15,7 @@ contract Token is ERC20 {
     // uint256 private constant INITIAL_SUPPLY =
     //     uint256(INITIAL_WHOLE_TOKENS) * uint256(TOKEN_WEI);
 
-    constructor(address _investContract) ERC20("Cosmic Loot Box", "COSMICPRVT") {
+    constructor(address _investContract, string memory _name) ERC20(_name, "COSMICPRVT") {
         owner = msg.sender;
         investContract = _investContract;
     }
@@ -25,8 +25,9 @@ contract Token is ERC20 {
         _;
     }
 
-    function mint(address to, uint256 amount) external investContractOnly{
+    function mint(address to, uint256 amount) external investContractOnly returns(bool){
         _mint(to, amount);
+        return true;
     }
 
 
