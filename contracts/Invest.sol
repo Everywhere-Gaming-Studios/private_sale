@@ -12,6 +12,7 @@ contract Invest {
     mapping(address => bool) public whitelist;
     uint256[4] public lootBox;
     address[4] public tokens;
+    uint256 public totalInvested;
 
     constructor(address _coin, uint256 _maxAmount, uint256 _rare, uint256 _epic, uint256 _legendary) {
         owner = msg.sender;
@@ -79,7 +80,8 @@ contract Invest {
         require(allowance >= _amount, "Check the token allowance");
         IERC20(coin).transferFrom(msg.sender, address(this), _amount);
         amountPaid[msg.sender] = amountPaid[msg.sender] + _amount;
-        _mintToken(msg.sender, _amount);       
+        _mintToken(msg.sender, _amount);
+        totalInvested += _amount;
     }
 
     function _mintToken(address _to, uint256 _amount) internal tokensSet{
